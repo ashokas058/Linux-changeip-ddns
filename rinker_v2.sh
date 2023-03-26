@@ -1,11 +1,14 @@
 #! /bin/bash
 MYIP=$(curl -sX GET https://ip.changeip.com |head -1)
-echo $MYIP
 status=""
-USER=   #username
+
+#---------------- Changeip credentials ---------------------------
+
+USER= #username
 PASSWORD=  #password
 HOST= #hostname
 
+#--------------------------------------------------------------------
 if [[ $(cat /var/run/last.ip) != $(echo $MYIP) ]];then
   	status=($(curl -s -X GET "https://nic.ChangeIP.com/nic/update?u=$USER&p=$PASSWORD&myip=$MYIP&hostname=$HOST&set=1"):1:3)
   	if [[ $status == "200" ]];then
