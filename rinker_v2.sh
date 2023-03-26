@@ -4,9 +4,9 @@ status=""
 
 #---------------- Changeip credentials ---------------------------
 
-USER=ashokas.crypt@gmail.com #username
-PASSWORD=ashok.net4.0  #password
-HOST=api.changeip.us #hostname
+USER= #username
+PASSWORD=  #password
+HOST= #hostname
 
 #--------------------------------------------------------------------
 if [[ $(cat /var/run/last.ip) != $(echo $MYIP) ]];then
