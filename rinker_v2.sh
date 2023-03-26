@@ -4,9 +4,9 @@ status=""
 
 #---------------- Changeip credentials ---------------------------
 
-USER= #username
-PASSWORD=  #password
-HOST= #hostname
+USER=ashokas.crypt@gmail.com #username
+PASSWORD=ashok.net4.0  #password
+HOST=api.changeip.us #hostname
 
 #--------------------------------------------------------------------
 if [[ $(cat /var/run/last.ip) != $(echo $MYIP) ]];then
@@ -14,10 +14,10 @@ if [[ $(cat /var/run/last.ip) != $(echo $MYIP) ]];then
   	if [[ $status == "200" ]];then
 		echo "New IP updated:- $MYIP"
 		echo $MYIP > /var/run/last.ip
-		echo "Success --- $(date '+%Y-%m-%d %H:%M')----- $MYIP\n" >> /var/log/changeip.log
+		echo "Success --- $(date '+%Y-%m-%d %H:%M')----- $MYIP" >> /var/log/changeip.log
 	else
 		echo "status code :- $status"
-		echo "Error --- $(date '+%Y-%m-%d %H:%M')----- $MYIP\n" >> /var/log/changeip.log
+		echo "Error --- $(date '+%Y-%m-%d %H:%M')----- $MYIP" >> /var/log/changeip.log
 		echo "IP:- $MYIP"
 	fi
 else
